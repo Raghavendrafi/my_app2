@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit-Page</title>
+</head>
+<body>
+	<%=form_for @category do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name%>
+
+	<%= submit_tag "Submit"%>
+	<%end%>
+</body>
+</html>

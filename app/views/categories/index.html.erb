@@ -1,0 +1,17 @@
+<h3 class="font_color">Currently Available Categories</h3>
+
+<table>
+
+	<% @categories.each do |category|%>
+
+	<%= link_to category.name, products_path(cat_id:category.id) %></br></br>
+	<%end%>
+
+</table>
+</br></br>
+<b><%= link_to 'Add', new_category_path%></b> &nbsp;
+
+
+
+
+

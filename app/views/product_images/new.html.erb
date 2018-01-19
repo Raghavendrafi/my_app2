@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product-Images-new</title>
+</head>
+<body>
+	<h1>Add Product </h1>	
+
+	<%= form_for @product_image do |f|%>
+		<div>
+			<%= f.label :image%> 
+			<%= f.file_field :image%></br>
+    	</div>
+
+    	<div>
+			<%= collection_select(:product_image,:product_id, Product.all, :id, :title,{:prompt => 'Select'})%></br>
+		</div>
+
+		<div>
+			<%= submit_tag "Submit"%>
+		</div>
+
+	<%end%>
+</body>
+</html>

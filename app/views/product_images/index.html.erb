@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product-Images-Index</title>
+</head>
+<body>
+	<h1>This Product Image Page Index</h1>
+	<% @product_images.each do |product_image| %>
+
+	<th><%= image_tag(product_image.image) %></br></th>
+	<%end%>
+</body>
+</html>

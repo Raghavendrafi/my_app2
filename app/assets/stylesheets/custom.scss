@@ -1,0 +1,44 @@
+@import "bootstrap-sprockets";
+
+body{
+	background-color: lightblue;
+}
+
+header{
+	margin-bottom: 50px;
+	color:red;
+	ul{
+		float:left;
+		list-style: none;
+		li{
+			font-size: 1.3em;
+			float: left;
+			margin-left: 15px;
+		}
+
+	}
+}
+#li{
+	float:right;
+}
+
+footer{
+	background-color: orange;
+	margin-top: 40px;
+	color: lightgray;
+
+	ul{
+    	float: right;
+    	list-style: none;
+
+    	li {
+    		font-size: 1.3em;
+     	 	float: left;
+      		margin-left: 15px;
+    	}
+  	}
+}
+
+.h3{
+	background-color: orange;
+}

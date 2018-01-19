@@ -1,0 +1,10 @@
+<h2 class="font_color">Products Details</h2>
+<table>
+	<th><%= @product.title %></br>
+	<%= image_tag(@product.image.url(:big)) %></br>
+	Price:<%= @product.price %>Rs</th>
+</table>
+<h7>=========================================</h7></br>
+<%= link_to 'Edit', edit_product_path %>
+
+<%= link_to 'Back', products_path%>
