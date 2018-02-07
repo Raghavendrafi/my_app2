@@ -1,0 +1,40 @@
+
+
+<div>
+	<%= @product.title %></br>
+	Price:<%= @product.price %>Rs</br>
+	Images:
+</div>
+
+<img  class="elevatezoom-gallery active" id="zoom_03" src="<%=@product.product_images.first.p_images.url(:big)%>" data-zoom-image="<%=@product.product_images.first.p_images.url%>"/>
+<div id="gall">
+		<a class="zoomLense" href="#" data-image="<%=@product.product_images.first.p_images.url(:small)%>" data-zoom-image="<%=@product.product_images.first.p_images.url%>">
+    		<img id="zoom_03" src="<%=@product.product_images.first.p_images.url(:thumb)%>" />
+  		</a>
+
+  		<a class="elevatezoom-gallery" href="#" data-image="<%=@product.product_images.second.p_images.url(:small)%>" data-zoom-image="<%=@product.product_images.second.p_images.url%>">
+    		<img id="zoom_03" src="<%=@product.product_images.second.p_images.url(:thumb)%>" />
+  		</a>
+
+  		<a class="elevatezoom-gallery" href="#" data-image="<%=@product.product_images.third.p_images.url(:small)%>" data-zoom-image="<%=@product.product_images.third.p_images.url%>">
+    		<img id="zoom_03" src="<%=@product.product_images.third.p_images.url(:thumb)%>" />
+  		</a>
+</div>
+
+
+
+
+
+<script>
+//initiate the plugin and pass the id of the div containing gallery images
+$("#zoom_03").elevateZoom({tint:true, tintColour:'#F90', tintOpacity:0.5 ,gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+
+//pass the images to Fancybox
+$("#zoom_03").bind("click", function(e) {  
+  var ez =   $('#zoom_03').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+  return false;
+});
+
+
+</script>

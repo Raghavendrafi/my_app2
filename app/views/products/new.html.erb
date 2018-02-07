@@ -1,24 +1,30 @@
 <h1>Add Product</h1>	
 	
-	<%= form_for @product do |f|%>
-	<div>
-	<%= f.label :title%> 
-	<%= f.text_field :title %></br>
-	</div>
+<table class = "table table-bordered table-striped">
+	<%= form_for (@product) do |f|%>
+		<div>
+			Title:
+			<%= f.text_field :title %></br>
+		</div>
 
-	<div>
-	<%= f.label :price%> 
-	<%= f.text_field :price %></br>
-	</div>
+		<div>
+			Price:
+			<%= f.text_field :price %></br>
+		</div>
+
+		<div>
+			Image:
+			<%= f.file_field :images%>
+		</div>
+    	<div>
+			<%= collection_select(:product,:category_id, Category.all, :id, :name,{:prompt => 'Select'})%></br>
+		</div>
+
+		<div>
+			<%= submit_tag "Submit"%>
+		</div>
+		
+	<%end%>
 
 
-    <div>
-	<%= collection_select(:product,:category_id, Category.all, :id, :name,{:prompt => 'Select'})%></br>
-	</div>
-
-	<div>
-	<%= submit_tag "Submit"%>
-	</div>
-
-<%end%>
-
+</table>

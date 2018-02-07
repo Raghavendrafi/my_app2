@@ -1,2 +1,23 @@
-<h1>Welcome!!!</h1>
-<%= link_to 'Category', categories_path%>
+
+<% @categories.each do |category|%>
+<div class="container-fluid">
+	<div class="row" style="margin:20px; ">
+		<div class="col-sm-3 col-md-3 col-xs-12 col-lg-3 text-center">
+			<h1 ><%=category.name%></h1>
+			
+		<%= link_to 'View all', products_path(category), :class=>"btn btn-primary"%>
+		</div>
+		<%category.products.each do |pro|%>
+				<%#pro.product_images.each do |cc|%>
+				<div class="col-sm-3 col-md-3 col-xs-12 col-lg-3 space">
+					<a><%= link_to image_tag(pro.product_images.first.p_images.url(:small)), product_path(pro.id), :class=>"img-responsive"%></a>
+				</div>
+			<%#end%>
+		<%end%>
+	</div>
+</div>
+<%end%>
+
+
+
+

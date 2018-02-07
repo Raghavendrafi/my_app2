@@ -9,7 +9,17 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 gem 'bootstrap-sass', '3.3.7'
+gem 'active_bootstrap_skin'
+gem 'active_admin_theme'
+gem 'active_skin'
+gem 'active-admin-skin'
 gem 'pg'
+
+
+#gem 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin'
+gem 'devise'
 #image gem
 gem 'carrierwave', '~> 1.0'
 gem "rmagick", "~> 2.13.1"

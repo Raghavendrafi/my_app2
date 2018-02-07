@@ -1,6 +1,6 @@
 class ProductImagesController < ApplicationController
+  
   def index
-
   	@product_images = ProductImage.all
   end
 
@@ -9,7 +9,7 @@ class ProductImagesController < ApplicationController
   end
 
   def show
-  	#@product_image = ProductImage.find(params[:id])
+  	@product_image = ProductImage.find(params[:id])
   end
 
   def create
@@ -17,15 +17,14 @@ class ProductImagesController < ApplicationController
 
   	if @product_image.save!
   		redirect_to product_images_path
-  	else
-  		render :new
-  	end
+   	end
   end
+
 end
 
 private
 
 def product_image_params
-	params.require(:product_image).permit(:id,:product_id,:image)
+	params.require(:product_image).permit(:id,:product_id,:p_images)
 end
 

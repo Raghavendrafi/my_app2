@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Product-Images-Index</title>
-</head>
-<body>
-	<h1>This Product Image Page Index</h1>
-	<% @product_images.each do |product_image| %>
-
-	<th><%= image_tag(product_image.image) %></br></th>
+<h3 style="color:darkblue">Available Products</h3>
+<div>
+	<% @product_images.each do |product|%>
+	<h4><%= link_to product.title, product_path(product)%><h4>	
+		<%= image_tag(product.p_images.url(:thumb))%>
 	<%end%>
-</body>
-</html>
+</div>

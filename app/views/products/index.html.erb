@@ -1,16 +1,13 @@
-<h3>Currently Available Products</h3>
-<table>
-	<% @products.each do |product|%>
-
-	<th><%= link_to product.title, new_product_image_path%></br> 
-		
-	<%#= link_to image_tag(product.image.url(:thumb)), product_path(product)%></br></th>
-
-	<%end%>
-
-</table></br>
-
-<%= link_to 'Add', new_product_path%>
-<%= link_to 'Back', categories_path%>
-
+<% @products.each do |product|%>
+<div class="container-fluid">
+	<div class="row" style="margin:20px; ">
+		<div class="col-sm-3 col-md-3 col-xs-12 col-lg-3 text-center">
+			<h1 ><%=product.title%></h1>
+		</div>
+		<div class="col-sm-2 col-md-3 col-xs-12 col-lg-2 space">
+					<a><%= link_to image_tag(product.product_images.first.p_images.url(:small)), product_path(product.id), :class=>"img-responsive"%></a>
+		</div>
+	</div>
+</div>
+<%end%>
 

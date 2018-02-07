@@ -1,0 +1,20 @@
+<h1>Welcome!!!</h1>
+<h3 class="font_color">Categories</h3>
+
+<table >
+
+	<% @categories.each do |category|%>
+
+		<%=category.name%></br></br>
+		<%category.products.each do |pro|%>
+			<%=pro.title%>
+			<%pro.product_images.each do |cc|%>&nbsp; 
+				<%= link_to image_tag(cc.p_images.url(:small)), product_path(pro.id)%>
+				<%end%>
+		<%end%>
+		<%#= link_to 'More', 'products/index'%><br/>
+	<%end%>
+
+
+</table>
+

@@ -1,0 +1,15 @@
+<h2 class="font_color">Products Details</h2>
+
+Images:</br>
+	<% @product_image.each do |product_image| %>
+	  <%= image_tag(product_image.p_images.url(:thumb)) %>
+	<% end %>
+</br>
+
+<%#= link_to 'Add Images', new_product_image_path %>
+
+<div>
+	<button class="btn-single" onclick="window.location.href='http://localhost:3000/product_images/new'">Add Images</button>
+
+	<button class="btn-single" onclick="window.location.href='http://localhost:3000/products'">Back</button>
+</div>

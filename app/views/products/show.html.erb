@@ -1,10 +1,20 @@
 <h2 class="font_color">Products Details</h2>
 <table>
-	<th><%= @product.title %></br>
-	<%= image_tag(@product.image.url(:big)) %></br>
-	Price:<%= @product.price %>Rs</th>
+	<%= @product.title %></br>
+	Price:<%= @product.price %>Rs</br>
+	<p>Images:
+	<% @product.product_images.each do |product_image| %>
+	<div class="col-sm-2 col-md-2 col-xs-12 col-lg-3 space">
+		<%#= image_tag(product_image.p_images.url(:big)) %>
+	<img class="zoom_01" src="<%=product_image.p_images.url(:small)%>" data-zoom-image="<%=product_image.p_images.url%>"/>
+	</div>
+	<% end %></p>
+	
+</br>
 </table>
-<h7>=========================================</h7></br>
-<%= link_to 'Edit', edit_product_path %>
 
-<%= link_to 'Back', products_path%>
+<script>
+    $('.zoom_01').elevateZoom({easing : true});
+</script>
+
+
